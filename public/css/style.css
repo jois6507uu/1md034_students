@@ -18,3 +18,8 @@ body {
 #customersection {
 
 }
+
+button:hover {
+    background-color: darkgray;
+    cursor: pointer;
+}
