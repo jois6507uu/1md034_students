@@ -7,20 +7,31 @@ body {
     font-size: 17px;
 }
 
+#header {
+    margin: 40px;
+}
+
 .allergy {
     font-weight: bold;
 }
 
 #burgersection {
+    padding: 20px;
     background-color: black;
     color: white;
 }
 
-#customersection {
 
+#customersection {
+    margin: 20px 40px;
 }
 
-button:hover {
+#orderbutton {
+    margin: 0px 0px 20px 40px;
+    padding: 10px 20px;
+}
+
+#orderbutton:hover {
     background-color: darkgray;
     cursor: pointer;
 }
