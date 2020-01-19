@@ -29,7 +29,7 @@ Create an index.html file which contains:
 	- [x] Street
 	- [x] House Number (only allowing numbers in this field)
 	- [x] Gender (male, female, do not wish to provide as radio buttons)
-- [ ] A button to place the order
+- [x] A button to place the order
 
 ## 03 CSS
 
