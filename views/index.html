@@ -77,31 +77,44 @@
 	      <label for="fullname">Full Name</label></br>
 	      <input type="text" id="fullname" name="fn" required="required" placeholder="First- and Last name">
 	    </p>
+	
+	    
 	    <p>
 	      <label for="email">E-mail</label></br>
 	      <input type="text" id="email" name="em" required="required" placeholder="E-mail address">
 	    </p>
+	    
 	    <p>
 	      <label for="street">Street</label></br>
 	      <input type="text" id="street" name="st" required="required" placeholder="Street name">
 	    </p>
+	    
 	    <p>
 	      <label for="house">House</label></br>
 	      <input type="number" id="house" name="ho" required="required" placeholder="House number">
 	    </p>
-	  </section>
 
-	  <section>
-	    <h4>Payment information</h4>
 	    <p>
-	      <label for="paymentmethod">Payment Method</label></br>
+	      <label for="paymentmethod">Payment options</label></br>
 	      <select id="paymentmethod" name="pm">
-		<option selected="selected">Credit Card</option>
+		<option selected="selected">Credit card</option>
 		<option>PayPal</option>
 		<option>Swish</option>
 		<option>Bitcoin</option>
+	      </select>
 	    </p>
-	  </section>
+	
+
+	    <p>
+	      <label>Gender</label></br>
+	      <input type="radio" id="male" name="g" required="required" value="1">
+	      <label for="male">Male</label></br>
+	      <input type="radio" id="female" name="g" required="required" value="2">
+	      <label for="female">Female</label></br>
+	      <input type="radio" id="notprovided" name="g" required="required" value="3" checked="checked">
+	      <label for="notprovided">Do not wish to provide</label></br>
+	      
+	    </p>
 	  
 	</section>
       </main>
