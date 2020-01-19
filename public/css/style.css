@@ -2,6 +2,7 @@
 
 
 body {
+    margin: 0 auto;
     font-family: 'Open sans';
     font-size: 17px;
 }
@@ -22,4 +23,14 @@ body {
 button:hover {
     background-color: darkgray;
     cursor: pointer;
+}
+
+#burgertable {
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+}
+
+#burgertable ul {
+    list-style-type: none;
 }
