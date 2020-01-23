@@ -11,6 +11,12 @@ body {
     margin: 40px;
 }
 
+#headerimg {
+    width: 100%;
+    height: 300px;
+    opacity: 0.9;
+}
+
 .allergy {
     font-weight: bold;
 }
