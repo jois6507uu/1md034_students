@@ -16,57 +16,44 @@
 	  <h3>Burgers</h3>
 	  <p>Select your order.</p>
 	  
-	  <table id="burgertable">
-	    <thead>
-	      <tr>
-		<th>Cheese burger</th>
-		<th>Mushroom burger</th>
-		<th>Gluten free burger</th>
-	      </tr>
-	    </thead>
-	    <tbody>
-	      <tr>
-		<td>
-		  <img src="img/cheeseburger.jpg" alt="Cheese burger" width="300" height="200">
-		</td>
-		<td>
-		  <img src="img/vegan-mushroom.jpeg" alt="Vegan Mushroom burger" width="300" height="200">
-		</td>
-		<td>
-		  <img src="img/gluten-free-hamburger.jpg" alt="Gluten free burger" width="300" height="200">
-		</td>
-	      </tr>
-	      <tr>
-		<td>
-		  <ul>
-		    <li>Two patties made from 100% beef.</li>
-		    <li>Two slices of american cheddar cheese.</li>
-		    <li>Roasted brioche bun.</li>
-		    <li>Total calories: 867 kcal.</li>
-		    <li>Contains <span class="allergy">gluten</span> and <span class="allergy">lactose</span>.</li>
-		  </ul>
-		</td>
-		<td>
-		  <ul>
-		    <li>Two patties made from mushrooms.</li>
-		    <li>Red onions, spinach and cucumber.</li>
-		    <li>Potato bun.</li>
-		    <li>Total calories: 521 kcal.</li>
-		    <li><span class="allergy">Vegan</span>.</li>
-		    <li>Contains <span class="allergy">gluten</span>.</li>
-		  </ul>
-		</td>
-		<td>
-		  <ul>
-		    <li>Patty made from chicken.</li>
-		    <li>Muenster cheese, tomatoes, onions and avocado.</li>
-		    <li><span class="allergy">Gluten</span> free bun.</li>
-		    <li>Total calories: 320 kcal.</li>
-		    <li><span class="allergy">Gluten</span> and <span class="allergy">lactose</span> free.</li>
-		  </ul>
-		</td>
-	      </tr>
-	  </table>
+	  <div class="wrapper">
+	    <div class="burger a">
+	      <h4>Cheese burger</h5>
+	      <img src="img/cheeseburger.jpg" alt="Cheese burger" width="300" height="200">
+	      <ul>
+		<li>Two patties made from 100% beef.</li>
+		<li>Two slices of american cheddar cheese.</li>
+		<li>Roasted brioche bun.</li>
+		<li>Total calories: 867 kcal.</li>
+		<li>Contains <span class="allergy">gluten</span> and <span class="allergy">lactose</span>.</li>
+	      </ul>
+	    </div>
+	    
+	    <div class="burger b">
+	      <h4>Mushroom burger</h5>
+	      <img src="img/vegan-mushroom.jpeg" alt="Vegan Mushroom burger" width="300" height="200">
+	      <ul>
+	      	<li>Two patties made from mushrooms.</li>
+		<li>Red onions, spinach and cucumber.</li>
+		<li>Potato bun.</li>
+		<li>Total calories: 521 kcal.</li>
+		<li><span class="allergy">Vegan</span>.</li>
+		<li>Contains <span class="allergy">gluten</span>.</li>
+	      </ul>
+	    </div>
+	    
+	    <div class="burger c">
+	      <h4>Gluten free burger</h5>
+	      <img src="img/gluten-free-hamburger.jpg" alt="Gluten free burger" width="300" height="200">
+	      <ul>
+		<li>Patty made from chicken.</li>
+		<li>Muenster cheese, tomatoes, onions and avocado.</li>
+		<li><span class="allergy">Gluten</span> free bun.</li>
+		<li>Total calories: 320 kcal.</li>
+		<li><span class="allergy">Gluten</span> and <span class="allergy">lactose</span> free.</li>
+	      </ul>
+	    </div>
+	  </div>
 	  
 	</section>
 
@@ -124,7 +111,7 @@
 	
       </main>
       <hr>
-      <footer>
+      <footer class="footer">
     	<p>©2020 - Burgorder</p>
       </footer>
     </body>
