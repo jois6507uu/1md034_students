@@ -20,6 +20,7 @@ let baconburger = new menuItem("Bacon Nightmare Burger", "Triple bacon, beef pat
 
 let lettuceburger = new menuItem("Lettuce Burger", "Lettuce bun, 180g beef patty, cheddar cheese, onion and a tomato slice. Low calories", 188, "", "img/lettuceburger.jpeg");
 
+/*
 let menu = [cheeseburger, mushroomburger, glutenfreeburger, baconburger, lettuceburger];
 
 let burgerGrid = document.getElementById("wrapper");
@@ -65,3 +66,4 @@ for (burger in menu)
     burgerGrid.appendChild(gridItem);
 }
 
+*/
