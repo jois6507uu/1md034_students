@@ -20,8 +20,23 @@ let baconburger = new menuItem("Bacon Nightmare Burger", "placeholder", 939, "Co
 
 let lettuceburger = new menuItem("Lettuce Burger", "placeholder", 188, "Gluten and lactose free", "placeholder");
 
-document.getElementById("cheeseburger").innerHTML = cheeseburger.getNameKcal();
-document.getElementById("mushroomburger").innerHTML = mushroomburger.getNameKcal();
-document.getElementById("glutenfreeburger").innerHTML = glutenfreeburger.getNameKcal();
-document.getElementById("baconburger").innerHTML = baconburger.getNameKcal();
-document.getElementById("lettuceburger").innerHTML = lettuceburger.getNameKcal();
+let menu = [cheeseburger, mushroomburger, glutenfreeburger, baconburger, lettuceburger];
+
+let burger;
+let myElement = document.getElementById("myID");
+for (burger in menu)
+{
+    let burgerItem = document.createElement("li");
+    let burgerName = document.createTextNode(menu[burger].name);
+    let burgerKcal = document.createTextNode(menu[burger].kcal);
+
+    burgerItem.appendChild(burgerName);
+    burgerItem.appendChild(burgerKcal);
+    
+    if (menu[burger].allergy.length > 0) {
+	let burgerAllergy = document.createTextNode(menu[burger].allergy);
+	burgerItem.appendChild(burgerAllergy);
+    }
+
+    myElement.appendChild(burgerItem);
+}
