@@ -1,4 +1,3 @@
-
 function menuItem(name, desc, kcal, allergy, imgPath) {
     this.name = name;
     this.description = desc;
@@ -21,8 +20,8 @@ let baconburger = new menuItem("Bacon Nightmare Burger", "placeholder", 939, "Co
 
 let lettuceburger = new menuItem("Lettuce Burger", "placeholder", 188, "Gluten and lactose free", "placeholder");
 
-console.log(cheeseburger.getNameKcal());
-console.log(mushroomburger.getNameKcal());
-console.log(glutenfreeburger.getNameKcal());
-console.log(baconburger.getNameKcal());
-console.log(lettuceburger.getNameKcal());
+document.getElementById("cheeseburger").innerHTML = cheeseburger.getNameKcal();
+document.getElementById("mushroomburger").innerHTML = mushroomburger.getNameKcal();
+document.getElementById("glutenfreeburger").innerHTML = glutenfreeburger.getNameKcal();
+document.getElementById("baconburger").innerHTML = baconburger.getNameKcal();
+document.getElementById("lettuceburger").innerHTML = lettuceburger.getNameKcal();
