@@ -2,15 +2,15 @@
 <html lang="en">
   <head>
     <script src="js/js_script.js" defer></script>
-    <script src="https://vuejs.org/js/vue.js"></script>
-    <script src="js/vue_script.js"></script>
+    <script src="https://vuejs.org/js/vue.js" defer></script>
+    <script src="js/vue_script.js" defer></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <title>Burgorder - fast and easy!</title>
     <meta charset="utf-8"/>
   </head>
     <body>
       <main>
-	<header id ="header">
+	<header id="header">
 	  <h1 class="headerh1">Welcome to Burgorder!</h1>
 	  <img src="img/headerimg.jpg" id="headerimg">
 	</header>
@@ -20,7 +20,13 @@
 	  <p>Select your order.</p>
 	  
 	  <div id="wrapper">
-	  
+	    <div v-for="burger in menu">
+	      <h4>{{ burger.name }}</h4>
+	      <img class="burgerimg" v-bind:src="burger.imgPath"/>
+	      <p>{{ burger.description }}</p>
+	      <p>Kcal: {{ burger.kcal }}</p>
+	      <p>{{ burger.allergy }}</p>
+	    </div>
 	  </div>
 	</section>
 

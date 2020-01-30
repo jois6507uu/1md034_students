@@ -1,8 +1,10 @@
-/*
+
+
 const vm = new Vue({
   el: '#wrapper',
-  data: {
-      menu: [
+    data: {
+	
+	menu: [
 	  cheeseburger, 
 	  mushroomburger, 
 	  glutenfreeburger, 
@@ -11,4 +13,3 @@ const vm = new Vue({
       ]
   }
 })
-*/
