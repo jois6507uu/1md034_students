@@ -1,4 +1,4 @@
-function menuItem(name, desc, kcal, allergy, imgPath) {
+/*function menuItem(name, desc, kcal, allergy, imgPath) {
     this.name = name;
     this.description = desc;
     this.kcal = kcal;
@@ -32,3 +32,5 @@ const vm = new Vue({
       ]
   }
 })
+*/
+
