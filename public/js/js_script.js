@@ -1,8 +1,9 @@
-function menuItem(name, desc, kcal, allergy, imgPath) {
+/*function menuItem(name, desc, kcal, lactose, gluten, imgPath) {
     this.name = name;
     this.description = desc;
     this.kcal = kcal;
-    this.allergy = allergy;
+    this.lactose = lactose;
+    this.gluten = gluten;
     this.imgPath = imgPath;
 
     this.getNameKcal = function() {
@@ -10,16 +11,16 @@ function menuItem(name, desc, kcal, allergy, imgPath) {
     };
 }
 
-let cheeseburger = new menuItem("Cheese Burger", "Two patties made from 100% beef. Two slices of american cheddar cheese. Roasted brioche bun.", 867, "Contains gluten and lactose", "img/cheeseburger.jpg");
+let cheeseburger = new menuItem("Cheese Burger", "Two patties made from 100% beef. Two slices of american cheddar cheese. Roasted brioche bun.", 867, true, true, "img/cheeseburger.jpg");
 
-let mushroomburger = new menuItem("Mushroom Burger", "Vegan. Two patties made from mushrooms. Red onions, spinach and cucumber. Potato bun.", 521, "Contains gluten", "img/vegan-mushroom.jpeg");
+let mushroomburger = new menuItem("Mushroom Burger", "Vegan. Two patties made from mushrooms. Red onions, spinach and cucumber. Potato bun.", 521, false, true, "img/vegan-mushroom.jpeg");
 
-let glutenfreeburger = new menuItem("Gluten free Burger", "Patty made from chicken. Muenster cheese, tomatoes, onions and avocado.", 320, "", "img/gluten-free-hamburger.jpg");
+let glutenfreeburger = new menuItem("Gluten free Burger", "Patty made from chicken. Muenster cheese, tomatoes, onions and avocado.", 320, false, false, "img/gluten-free-hamburger.jpg");
 
-let baconburger = new menuItem("Bacon Nightmare Burger", "Triple bacon, beef patty, lettuce, red onion, tomatoes and pickles", 939, "Contains gluten and lactose", "img/baconburger.jpg");
+let baconburger = new menuItem("Bacon Nightmare Burger", "Triple bacon, beef patty, lettuce, red onion, tomatoes and pickles", 939, true, true, "img/baconburger.jpg");
 
-let lettuceburger = new menuItem("Lettuce Burger", "Lettuce bun, 180g beef patty, cheddar cheese, onion and a tomato slice. Low calories", 188, "", "img/lettuceburger.jpeg");
-
+let lettuceburger = new menuItem("Lettuce Burger", "Lettuce bun, 180g beef patty, cheddar cheese, onion and a tomato slice. Low calories", 188, false, false, "img/lettuceburger.jpeg");
+*/
 /*
 let menu = [cheeseburger, mushroomburger, glutenfreeburger, baconburger, lettuceburger];
 

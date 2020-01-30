@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script type="text/javascript" src="js/menu.js"></script>
     <script src="js/js_script.js" defer></script>
     <script src="https://vuejs.org/js/vue.js" defer></script>
     <script src="js/vue_script.js" defer></script>
@@ -20,12 +21,13 @@
 	  <p>Select your order.</p>
 	  
 	  <div id="wrapper">
-	    <div v-for="burger in menu">
+	    <div v-for="burger in food">
 	      <h4>{{ burger.name }}</h4>
 	      <img class="burgerimg" v-bind:src="burger.imgPath"/>
 	      <p>{{ burger.description }}</p>
 	      <p>Kcal: {{ burger.kcal }}</p>
-	      <p>{{ burger.allergy }}</p>
+	      <p v-if="burger.lactose">Contains lactose</p>
+	      <p v-if="burger.gluten">Contains gluten</p>
 	    </div>
 	  </div>
 	</section>
