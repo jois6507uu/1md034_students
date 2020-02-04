@@ -1,26 +1,30 @@
-/*function menuItem(name, desc, kcal, lactose, gluten, imgPath) {
-    this.name = name;
-    this.description = desc;
-    this.kcal = kcal;
-    this.lactose = lactose;
-    this.gluten = gluten;
-    this.imgPath = imgPath;
+/*
+let orderButton = document.getElementById("orderbutton");
 
-    this.getNameKcal = function() {
-	return this.name + ' ' + this.kcal;
-    };
+
+function makeOrder() {
+    let name = document.getElementById("fullname").value;
+    let email = document.getElementById("email").value;
+    let street = document.getElementById("street").value;
+    let house = document.getElementById("house").value;
+    let payment = document.getElementById("paymentmethod").value;
+    let gender = document.getElementsByName("g");
+    let genderId;
+    for (let i = 0; i < gender.length; i++)
+    {
+	if (gender[i].checked)
+	{
+	    genderId = gender[i].id;
+	}
+    }
+    
+    let customerInformation = [name, email, street, house, payment, genderId];
+    console.log(customerInformation);
+    return customerInformation;
 }
-
-let cheeseburger = new menuItem("Cheese Burger", "Two patties made from 100% beef. Two slices of american cheddar cheese. Roasted brioche bun.", 867, true, true, "img/cheeseburger.jpg");
-
-let mushroomburger = new menuItem("Mushroom Burger", "Vegan. Two patties made from mushrooms. Red onions, spinach and cucumber. Potato bun.", 521, false, true, "img/vegan-mushroom.jpeg");
-
-let glutenfreeburger = new menuItem("Gluten free Burger", "Patty made from chicken. Muenster cheese, tomatoes, onions and avocado.", 320, false, false, "img/gluten-free-hamburger.jpg");
-
-let baconburger = new menuItem("Bacon Nightmare Burger", "Triple bacon, beef patty, lettuce, red onion, tomatoes and pickles", 939, true, true, "img/baconburger.jpg");
-
-let lettuceburger = new menuItem("Lettuce Burger", "Lettuce bun, 180g beef patty, cheddar cheese, onion and a tomato slice. Low calories", 188, false, false, "img/lettuceburger.jpeg");
 */
+// orderButton.addEventListener("click", makeOrder);
+
 /*
 let menu = [cheeseburger, mushroomburger, glutenfreeburger, baconburger, lettuceburger];
 

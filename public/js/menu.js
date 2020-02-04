@@ -36,7 +36,7 @@ let food = [
 	"description": "Lettuce bun, 180g beef patty, cheddar cheese, onion and a tomato slice. Low calories",
 	"kcal": 188,
 	"lactose": true,
-	"gluten": true,
+	"gluten": false,
 	"imgPath": "img/lettuceburger.jpeg"
     },
 ]

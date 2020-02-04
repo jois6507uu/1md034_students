@@ -28,6 +28,7 @@
 	      <p>Kcal: {{ burger.kcal }}</p>
 	      <p v-if="burger.lactose">Contains lactose</p>
 	      <p v-if="burger.gluten">Contains gluten</p>
+	      <input type="checkbox" v-bind:name="burger.name" v-bind:id="burger.kcal" v-bind:value="burger.name" v-model="orders">
 	    </div>
 	  </div>
 	</section>
@@ -39,28 +40,29 @@
 	    <h4>Delivery information</h4>
 	    <p>
 	      <label for="fullname">Full Name</label></br>
-	      <input type="text" id="fullname" name="fn" required="required" placeholder="First- and Last name">
+	      <input v-model="fullname" type="text" id="fullname" name="fn" placeholder="First- and Last name" required>
 	    </p>
 	
 	    
 	    <p>
 	      <label for="email">E-mail</label></br>
-	      <input type="text" id="email" name="em" required="required" placeholder="E-mail address">
+	      <input v-model="email" type="text" id="email" name="em" placeholder="E-mail address" required>
 	    </p>
 	    
 	    <p>
 	      <label for="street">Street</label></br>
-	      <input type="text" id="street" name="st" required="required" placeholder="Street name">
+	      <input v-model="street" type="text" id="street" name="st" placeholder="Street name" required>
 	    </p>
 	    
 	    <p>
 	      <label for="house">House</label></br>
-	      <input type="number" id="house" name="ho" required="required" placeholder="House number">
+	      <input v-model="house" type="number" id="house" name="ho" placeholder="House number" required>
 	    </p>
 
 	    <p>
 	      <label for="paymentmethod">Payment options</label></br>
-	      <select id="paymentmethod" name="pm">
+	      <select v-model="paymentmethod" id="paymentmethod" name="pm" required>
+		<option disabled value="">Choose payment method</option>
 		<option selected="selected">Credit card</option>
 		<option>PayPal</option>
 		<option>Swish</option>
@@ -71,18 +73,32 @@
 
 	    <p>
 	      <label>Gender</label></br>
-	      <input type="radio" id="male" name="g" required="required" value="1">
+	      <input type="radio" v-model="gender" id="male" name="g" value="1">
 	      <label for="male">Male</label></br>
-	      <input type="radio" id="female" name="g" required="required" value="2">
+	      <input type="radio" v-model="gender" id="female" name="g" value="2">
 	      <label for="female">Female</label></br>
-	      <input type="radio" id="notprovided" name="g" required="required" value="3" checked="checked">
+	      <input type="radio" v-model="gender" id="notprovided" name="g" value="3" checked>
 	      <label for="notprovided">Do not wish to provide</label></br>
-	      
 	    </p>
+
+	    <p class="errorText" v-if="missingFields == true">Missing fields, please fill them in.</p>
+	    
+	    <div v-if="customerInfoArray != null">
+	      <hr>
+	      <h4>Your Information</h4>
+	      <p>Name: {{ fullname }}</p>
+	      <p>E-mail: {{ email }}</p>
+	      <p>Address: {{ street }} {{ house }}</p>
+	      <p>Payment Method: {{ paymentmethod }}</p>
+	      <p>Gender: {{ genderName }}</p>
+
+	      <h4>Your Order</h4>
+	      <p v-for="order in orders">{{ order }}</p>
+	    </div>
 	  
 	</form>
 
-	<button type="submit" id="orderbutton"><img src="img/checkmark.png" width="15" height="15"/>Place order!</button>
+	<button type="submit" v-on:click="makeOrder" id="orderbutton"><img src="img/checkmark.png" width="15" height="15"/>Place order!</button>
 	
       </main>
       <hr>

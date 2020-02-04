@@ -97,3 +97,7 @@ body {
 .footer {
     text-align: center;
 }
+
+.errorText {
+    color: red;
+}
