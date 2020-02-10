@@ -4,106 +4,107 @@
     <script type="text/javascript" src="js/menu.js"></script>
     <script src="js/js_script.js" defer></script>
     <script src="https://vuejs.org/js/vue.js" defer></script>
+     <script src="/socket.io/socket.io.js" defer></script>
     <script src="js/vue_script.js" defer></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <title>Burgorder - fast and easy!</title>
     <meta charset="utf-8"/>
   </head>
     <body>
-      <main>
 	<header id="header">
 	  <h1 class="headerh1">Welcome to Burgorder!</h1>
 	  <img src="img/headerimg.jpg" id="headerimg">
 	</header>
-	<section id="burgersection">
-	  
-	  <h3>Burgers</h3>
-	  <p>Select your order.</p>
-	  
-	  <div id="wrapper">
-	    <div v-for="burger in food">
-	      <h4>{{ burger.name }}</h4>
-	      <img class="burgerimg" v-bind:src="burger.imgPath"/>
-	      <p>{{ burger.description }}</p>
-	      <p>Kcal: {{ burger.kcal }}</p>
-	      <p v-if="burger.lactose">Contains lactose</p>
-	      <p v-if="burger.gluten">Contains gluten</p>
-	      <input type="checkbox" v-bind:name="burger.name" v-bind:id="burger.kcal" v-bind:value="burger.name" v-model="orders">
+	<main>
+	  <section id="burgersection">
+	    
+	    <h3>Burgers</h3>
+	    <p>Select your order.</p>
+	    
+	    <div id="wrapper">
+	      <div v-for="burger in food">
+		<h4>{{ burger.name }}</h4>
+		<img class="burgerimg" v-bind:src="burger.imgPath"/>
+		<p>{{ burger.description }}</p>
+		<p>Kcal: {{ burger.kcal }}</p>
+		<p v-if="burger.lactose">Contains lactose</p>
+		<p v-if="burger.gluten">Contains gluten</p>
+		<input type="checkbox" v-bind:name="burger.name" v-bind:id="burger.kcal" v-bind:value="burger.name" v-model="myOrder">
+	      </div>
 	    </div>
-	  </div>
-	</section>
+	  </section>
+	  <section>
+	    <form id="customersection">
+	      <h3>Customer Information</h3>
+	      <p>Provide your information to complete your order.</p>
 
-	<form id="customersection">
-	  <h3>Customer Information</h3>
-	  <p>Provide your information to complete your order.</p>
+	      <h4>Delivery information</h4>
+	      <p>
+		<label for="fullname">Full Name</label></br>
+		<input v-model="fullname" type="text" id="fullname" name="fn" placeholder="First- and Last name" required>
+	      </p>
+	      
+	      
+	      <p>
+		<label for="email">E-mail</label></br>
+		<input v-model="email" type="text" id="email" name="em" placeholder="E-mail address" required>
+	      </p>
+	      
 
-	    <h4>Delivery information</h4>
-	    <p>
-	      <label for="fullname">Full Name</label></br>
-	      <input v-model="fullname" type="text" id="fullname" name="fn" placeholder="First- and Last name" required>
-	    </p>
-	
-	    
-	    <p>
-	      <label for="email">E-mail</label></br>
-	      <input v-model="email" type="text" id="email" name="em" placeholder="E-mail address" required>
-	    </p>
-	    
-	    <p>
-	      <label for="street">Street</label></br>
-	      <input v-model="street" type="text" id="street" name="st" placeholder="Street name" required>
-	    </p>
-	    
-	    <p>
-	      <label for="house">House</label></br>
-	      <input v-model="house" type="number" id="house" name="ho" placeholder="House number" required>
-	    </p>
+	      <p>
+		<label for="paymentmethod">Payment options</label></br>
+		<select v-model="paymentmethod" id="paymentmethod" name="pm" required>
+		  <option disabled value="">Choose payment method</option>
+		  <option selected="selected">Credit card</option>
+		  <option>PayPal</option>
+		  <option>Swish</option>
+		  <option>Bitcoin</option>
+		</select>
+	      </p>
 
-	    <p>
-	      <label for="paymentmethod">Payment options</label></br>
-	      <select v-model="paymentmethod" id="paymentmethod" name="pm" required>
-		<option disabled value="">Choose payment method</option>
-		<option selected="selected">Credit card</option>
-		<option>PayPal</option>
-		<option>Swish</option>
-		<option>Bitcoin</option>
-	      </select>
-	    </p>
-	
+	      <label>Delivery Address</label></br>
+	      <div class="view-box">
+		<div id="dots" v-on:click="addOrder">
+		  <div 
+		    v-for="(order, key) in orders"
+		    v-bind:style="{ left: order.details.x + 'px', top: order.details.y + 'px'}">
+		    {{key}}
+		  </div>
+		</div>
+	      </div>
 
-	    <p>
-	      <label>Gender</label></br>
-	      <input type="radio" v-model="gender" id="male" name="g" value="1">
-	      <label for="male">Male</label></br>
-	      <input type="radio" v-model="gender" id="female" name="g" value="2">
-	      <label for="female">Female</label></br>
-	      <input type="radio" v-model="gender" id="notprovided" name="g" value="3" checked>
-	      <label for="notprovided">Do not wish to provide</label></br>
-	    </p>
+	      <p>
+		<label>Gender</label></br>
+		<input type="radio" v-model="gender" id="male" name="g" value="Male">
+		<label for="male">Male</label></br>
+		<input type="radio" v-model="gender" id="female" name="g" value="Female">
+		<label for="female">Female</label></br>
+		<input type="radio" v-model="gender" id="notprovided" name="g" value="Not Provided" checked>
+		<label for="notprovided">Do not wish to provide</label></br>
+	      </p>
 
-	    <p class="errorText" v-if="missingFields == true">Missing fields, please fill them in.</p>
-	    
-	    <div v-if="customerInfoArray != null">
-	      <hr>
-	      <h4>Your Information</h4>
-	      <p>Name: {{ fullname }}</p>
-	      <p>E-mail: {{ email }}</p>
-	      <p>Address: {{ street }} {{ house }}</p>
-	      <p>Payment Method: {{ paymentmethod }}</p>
-	      <p>Gender: {{ genderName }}</p>
+	      <p class="errorText" v-if="missingFields == true">Missing fields, please fill them in.</p>
+	      
+	      <div v-if="customerInfoArray != null">
+		<hr>
+		<h3>Order Summary</h3>
+		<p>Name: {{ fullname }}</p>
+		<p>E-mail: {{ email }}</p>
+		<p>Payment Method: {{ paymentmethod }}</p>
+		<p>Gender: {{ gender }}</p>
 
-	      <h4>Your Order</h4>
-	      <p v-for="order in orders">{{ order }}</p>
-	    </div>
-	  
-	</form>
+		<h4>Your order</h4>
+		<p v-for="order in myOrder">{{ order }}</p>
+	      </div>
+	      
+	    </form>
 
-	<button type="submit" v-on:click="makeOrder" id="orderbutton"><img src="img/checkmark.png" width="15" height="15"/>Place order!</button>
-	
-      </main>
-      <hr>
-      <footer class="footer">
-    	<p>©2020 - Burgorder</p>
-      </footer>
+	    <button type="submit" v-on:click="makeOrder" id="orderbutton"><img src="img/checkmark.png" width="15" height="15"/>Place order!</button>
+	  </section>
+	</main>
+	<hr>
+	<footer class="footer">
+    	  <p>©2020 - Burgorder</p>
+	</footer>
     </body>
 </html>
