@@ -64,11 +64,10 @@
 
 	      <label>Delivery Address</label></br>
 	      <div class="view-box">
-		<div id="dots" v-on:click="addOrder">
+		<div id="dots" v-on:click="displayOrder">
 		  <div 
-		    v-for="(order, key) in orders"
 		    v-bind:style="{ left: order.details.x + 'px', top: order.details.y + 'px'}">
-		    {{key}}
+		    T
 		  </div>
 		</div>
 	      </div>
@@ -83,9 +82,9 @@
 		<label for="notprovided">Do not wish to provide</label></br>
 	      </p>
 
-	      <p class="errorText" v-if="missingFields == true">Missing fields, please fill them in.</p>
+	      <!-- <p class="errorText" v-if="missingFields == true">Missing fields, please fill them in.</p> --->
 	      
-	      <div v-if="customerInfoArray != null">
+	      <div v-if="missingFields == true">
 		<hr>
 		<h3>Order Summary</h3>
 		<p>Name: {{ fullname }}</p>
@@ -99,7 +98,7 @@
 	      
 	    </form>
 
-	    <button type="submit" v-on:click="makeOrder" id="orderbutton"><img src="img/checkmark.png" width="15" height="15"/>Place order!</button>
+	    <button type="submit" v-on:click="addOrder" id="orderbutton"><img src="img/checkmark.png" width="15" height="15"/>Place order!</button>
 	  </section>
 	</main>
 	<hr>
