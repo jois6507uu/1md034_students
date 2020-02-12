@@ -73,7 +73,6 @@ const vm = new Vue({
 	    
 	    socket.emit('addOrder', {orderId: this.getNext(), details: { x: this.localOrder.details.x, y: this.localOrder.details.y,},customerInformation: this.customerInfoArray,orderItems: this.myOrder,});
 	    
-	    console.log(this.orders[0]);
 
 	},
 	displayOrder: function ()
